@@ -1,0 +1,38 @@
+---
+// Component Imports
+import Buy from '../../components/Buy';
+import Counter from '../../components/Counter';
+// import "../styles/main.scss"
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+
+const { id } = Astro.params;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<style>
+			html,
+			body {
+				font-family: system-ui;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="mt-6">
+			<div class="flex justify-center mb-4">
+				<h1 class="text-4xl">Bitcoin Miner #{id}</h1>
+			</div>
+			<div class="flex justify-center">
+				<img src={`/images/inscriptions/${id}.jpg`}></img>
+			</div>
+			<Buy client:load insriptionId={id} price={0.1} />
+		</main>
+	</body>
+</html>

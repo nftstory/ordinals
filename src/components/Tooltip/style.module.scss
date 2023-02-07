@@ -1,0 +1,19 @@
+.hidden {
+    display: none;
+}
+
+.after {
+    position: relative;
+
+    &:hover {
+        .hidden {
+            display: block;
+            position: absolute;
+            width: 300px;
+            top: 1.5em;
+            padding: 0.5em;
+            left: 0;
+            background-color: beige;
+        }
+    }
+}

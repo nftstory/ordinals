@@ -1,0 +1,39 @@
+---
+// Component Imports
+import Buy from "../components/Buy";
+import Card from "../components/Card";
+// import "../styles/main.scss"
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<style>
+			html,
+			body {
+				font-family: system-ui;
+				margin: 0;
+			}
+			,
+			main {
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<main class="mt-16">
+			<h1 class="text-center text-3xl mb-16">Bitcoin Miners</h1>
+			<div class="mx-40">
+				<div class="grid grid-cols-4 gap-4 gap-y-12">
+					{new Array(5).fill(null).map((_, i) => <Card number={i+1} />)}
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
